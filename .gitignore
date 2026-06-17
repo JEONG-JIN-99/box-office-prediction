@@ -29,7 +29,6 @@ experiments/results/
 # Generated figures
 visualization/figures/
 
-# Trained model weights
-models/*.pth
+# Extra model checkpoints
 models/*.pt
 models/*.ckpt
