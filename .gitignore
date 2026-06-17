@@ -1,0 +1,35 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local runtime/cache
+__cache__/
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+box_env/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Data files
+data/raw/
+data/processed/
+
+# Experiment outputs
+experiments/results/
+
+# Generated figures
+visualization/figures/
+
+# Trained model weights
+models/*.pth
+models/*.pt
+models/*.ckpt
