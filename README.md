@@ -135,7 +135,7 @@ data/processed/movie_features_final.csv
 python train.py
 ```
 
-현재 코드 기준으로 `train.py`의 `main()`은 하이퍼파라미터 탐색 단계를 자동 실행하지 않고, 코드 안에 지정된 `best_params`로 최종 학습을 수행합니다.
+현재 코드 기준으로 `train.py`의 `main()`은 Stage 1 Random Search와 Stage 2 Grid Search를 순서대로 실행한 뒤, `run_stage2_grid_search()`가 반환한 `best_params`로 최종 모델을 학습합니다.
 
 최종 학습이 완료되면 아래 파일이 생성 또는 갱신됩니다.
 
@@ -258,7 +258,6 @@ models/scaler_config.json
 
 ## 주의사항
 
-- `train.py`는 현재 최신 `stage2_grid_search.csv`의 best 조합을 자동으로 읽어오지 않습니다.
 - `predict.py`는 `models/best_model.pth`와 `models/scaler_config.json`이 모두 있어야 실행됩니다.
 - 데이터 파일은 GitHub에 올리지 않도록 설정되어 있으므로, 새 환경에서는 데이터 수집과 전처리를 다시 수행해야 합니다.
 - 실행 결과 CSV, 그래프, 모델 weight는 실행할 때마다 최신 결과로 덮어써지는 구조입니다.

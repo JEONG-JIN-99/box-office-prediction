@@ -272,14 +272,15 @@ def main():
     test_data = (X_train, y_train_log, X_val, y_val_log, X_test, y_test_log, y_test)
 
     # 2. 1단계: Random Search 무작위 탐색 실행 (이미 완료됨)
-    # stage1_results = run_stage1_random_search(train_data, val_data, device)
+    stage1_results = run_stage1_random_search(train_data, val_data, device)
 
     # 3. 2단계: Grid Search 정밀 탐색 실행 (이미 완료됨)
-    # stage2_results, best_params, best_model_weights = run_stage2_grid_search(
-    #     stage1_results, train_data, val_data, device
-    # )
+    stage2_results, best_params, best_model_weights = run_stage2_grid_search(
+        stage1_results, train_data, val_data, device
+    )
 
-    best_params = {'learning_rate': 0.005, 'num_layers': 5, 'hidden_units': 128, 'dropout_rate': 0.0, 'batch_size': 128}
+    #최적 하이퍼파라미터 아는 상태에서 학습용 코드 
+    # best_params = {'learning_rate': 0.005, 'num_layers': 5, 'hidden_units': 128, 'dropout_rate': 0.0, 'batch_size': 128}
 
     # 4. 최적 모델 최종 학습 및 평가 저장
     train_best_model_final(best_params, train_data, test_data, scaler, device)
