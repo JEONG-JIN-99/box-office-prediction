@@ -22,7 +22,7 @@ import seaborn as sns
 
 # 프로젝트 루트를 sys.path에 추가
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import config
+from data import data_config as config
 import experiments.experiment_configs as exp_config
 
 # 한글 깨짐 방지 및 스타일 설정

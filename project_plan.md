@@ -345,14 +345,15 @@ visualization/figures/stage2/*.png
 
 ```text
 box-office-prediction/
-  config.py
   train.py
   predict.py
   requirements.txt
   project_plan.md
 
   data/
+    __init__.py
     collect_data.py
+    data_config.py
     raw/
     processed/
 

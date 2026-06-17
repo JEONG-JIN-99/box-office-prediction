@@ -25,7 +25,8 @@ import requests
 
 # 프로젝트 루트를 sys.path에 추가하여 config 모듈 임포트 가능하게 함
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import config
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from data import data_config as config
 
 # ============================================================
 # 로깅 설정
@@ -197,7 +198,7 @@ def collect_data():
     if config.API_KEY == "YOUR_API_KEY_HERE" or not config.API_KEY:
         logger.error("=" * 60)
         logger.error("API 키가 설정되지 않았습니다!")
-        logger.error("config.py 파일에서 API_KEY 값을 설정해 주세요.")
+        logger.error("data/data_config.py 파일에서 API_KEY 값을 설정해 주세요.")
         logger.error("API 키 발급: https://www.kobis.or.kr/kobisopenapi/")
         logger.error("=" * 60)
         sys.exit(1)

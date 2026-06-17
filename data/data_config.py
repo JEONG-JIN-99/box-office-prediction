@@ -10,7 +10,8 @@ import os
 # ============================================================
 # 프로젝트 루트 경로 (이 파일이 위치한 디렉토리 기준)
 # ============================================================
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+CONFIG_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(CONFIG_DIR)
 
 # ============================================================
 # KOFIC(영화진흥위원회) Open API 설정
